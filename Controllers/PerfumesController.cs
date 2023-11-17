@@ -28,6 +28,15 @@ public class PerfumesController : ODataController
     }
 
     [HttpGet]
+    [EnableQuery(PageSize = 10, AllowedLogicalOperators = AllowedLogicalOperators.All)]
+    [ODataRoute("brands")]
+    public List<Perfumes> GetBrandsParfumes(int brandId)
+    {
+        return _perfumeService.GetBrandParfumes(brandId);
+    }
+
+
+    [HttpGet]
     [EnableQuery]
     [ODataRoute("Filter")]
     public IQueryable<Perfumes> FilterPerfumesByBrand(

@@ -7,6 +7,7 @@ namespace FinekraApi.Core.Interfaces
     {
         IEnumerable<Perfumes> GetPerfumes();
         Perfumes GetPerfumeById(int perfumeId);
+        List<Perfumes> GetBrandByParfumes(int brandId);
         IEnumerable<Perfumes> SearchPerfumesByName(string perfumeName);
         IEnumerable<Perfumes> FilterPerfumesByBrand(string brandName);
         IEnumerable<Perfumes> SortPerfumesByPrice();

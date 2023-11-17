@@ -64,5 +64,10 @@ namespace FinekraApi.Core.Repositories
             int skip = (page - 1) * pageSize;
             return _dbContext.Perfumes.Skip(skip).Take(pageSize).ToList();
         }
+
+        public List<Perfumes> GetBrandByParfumes(int brandId)
+        {
+            return _dbContext.Perfumes.Where(x => x.BrandId == brandId).ToList();
+        }
     }
 }

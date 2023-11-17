@@ -44,6 +44,14 @@ namespace FinekraApi.Core.Services
             return _perfumeRepository.GetPagedPerfumes(page, pageSize);
         }
 
-       
+        public List<Perfumes> GetBrandParfumes(int brandId)
+        {
+            return _perfumeRepository.GetBrandByParfumes(brandId);
+        }
+
+        List<Perfumes> IPerfumeService.GetPagedPerfumes(int page, int pageSize)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
